@@ -9,14 +9,11 @@
 ### Installation 🛠️
 Download the Latest Release:
 
-1.) create a new foler anywhere on your pc, and make an additional folder in
+1.) create a new folder anywhere on your pc, and make an additional folder in
 it called "Images" (might be case sensitive idk) move all .png files into it
 
 if you dont have it downloaded, download the exe and drag it to the directory of the initial
-file you made and put the images into
-
-https://github.com/TaverNxyz/Esco-sDropper/releases/tag/v1.0.0
-
+file you made and put the images into.
 
 
 2.) ----    clone and build it with:  git clone https://github.com/TaverNxyz/Esco-sDropper.git   -----
