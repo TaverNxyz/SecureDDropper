@@ -1,6 +1,6 @@
-# Esco-sDropper 🚀
+# SecureDDropper 🚀
 
-**Esco-sDropper** is a simple tool designed to automate specific actions within **Escape From Tarkov**.
+**SecureDDropper** is a simple tool designed to automate specific actions within **Escape From Tarkov**.
 
 ### Features 🌟
 - **Automation**: Automate repetitive actions within the game.  
