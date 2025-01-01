@@ -8,6 +8,7 @@
 
 ### Installation 🛠️
 Download the Latest Release:
+https://github.com/TaverNxyz/Esco-sDropper/releases/tag/v1.0.0
 
 1.) create a new folder anywhere on your pc, and make an additional folder in
 it called "Images" (might be case sensitive idk) move all .png files into it
