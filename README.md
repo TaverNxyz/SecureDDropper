@@ -5,7 +5,6 @@
 ### Features 🌟
 - **Automation**: Automate repetitive actions within the game.  
 - **Easy Setup**: Simple to install and use.  
-- **Customizable**: Adjust the script as needed for your gameplay.
 
 ### Installation 🛠️
 Download the Latest Release:
