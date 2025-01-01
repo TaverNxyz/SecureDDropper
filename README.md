@@ -9,7 +9,6 @@
 
 ![InstantGif_2025 01 01-13 26_01](https://github.com/user-attachments/assets/74cfa14b-14df-42cf-9bd7-5556cf8ef017)
 ![InstantGif_2025 01 01-13 27_01](https://github.com/user-attachments/assets/149b34a0-9fbf-4ea1-b00b-608e963212f2)
-![InstantGif_2025 01 01-13 27](https://github.com/user-attachments/assets/8b47006d-3d59-41f3-9a97-ea6a8cfaa995)
 
 
 ### Installation 🛠️
