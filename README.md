@@ -28,4 +28,4 @@ file you made and put the images into.
 Navigate to the project folder:
 bash
 Copy code
-cd Esco-sDropperwwwwwwwwwwwwwwwwwwww
+cd SecureDDropper
