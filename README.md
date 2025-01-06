@@ -1,5 +1,7 @@
 # SecureDDropper 🚀
 
+IF YOU ARE SOMEONE USING THIS PLEASE DO ME THE FAVOR OF GIVING ME STARS.
+
 **SecureDDropper** is a simple tool designed to automate specific actions within **Escape From Tarkov**.
 
 ![dropperlogo](https://github.com/user-attachments/assets/b33adbcd-4f27-47da-a329-8b0ea70bfd81)
