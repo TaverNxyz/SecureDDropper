@@ -1,4 +1,4 @@
-https://buymeacoffee.com/esco
+Buy me a ☕ - https://buymeacoffee.com/esco
 
 
 # SecureDDropper 🚀
