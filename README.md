@@ -1,3 +1,6 @@
+https://buymeacoffee.com/esco
+
+
 # SecureDDropper 🚀
 
 IF YOU ARE SOMEONE USING THIS PLEASE DO ME THE FAVOR OF GIVING ME STARS.
