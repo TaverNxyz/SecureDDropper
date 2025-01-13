@@ -33,20 +33,7 @@ IF YOU ARE SOMEONE USING THIS PLEASE DO ME THE FAVOR OF GIVING ME STARS.
 
 
 ### Installation 🛠️
-Download the Latest Release:
-https://github.com/TaverNxyz/Esco-sDropper/releases/tag/v1.0.0
+1.) Download the Latest Release:
+### https://github.com/TaverNxyz/SecureDDropper/releases/tag/v1.1.0
 
-1.) create a new folder anywhere on your pc, and make an additional folder in
-it called "Images" (might be case sensitive idk) move all .png files into it
-
-if you dont have it downloaded, download the exe and drag it to the directory of the initial
-file you made and put the images into.
-
-
-2.) ----    clone and build it with:  git clone https://github.com/TaverNxyz/Esco-sDropper.git   -----
-
-   Clone the repository:
-Navigate to the project folder:
-bash
-Copy code
-cd SecureDDropper
+2.) Clone and build it with:  git clone [https://github.com/TaverNxyz/SecureDDropper.git]
