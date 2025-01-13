@@ -1,7 +1,21 @@
 Buy me a ☕ - https://buymeacoffee.com/esco
 
 
-# SecureDDropper 🚀
+**_# SecureDDropper 🚀
+### v1.1.0 Release
+
+1-13-2025: Update for Map and Round selection updated. Enjoy :)
+
+### ARCHIVE PASSWORD: EscoSD
+(Case sensitive)
+
+![unknown_2025 01 13-10 18](https://github.com/user-attachments/assets/25224da6-21cd-4537-93be-de88b7dad3a1)
+
+
+It runs smoothly, uses **OCR** for image recognition. 🎯
+
+### Full Changelog 📜:
+[Check it out here](https://github.com/TaverNxyz/Esco-sDropper/commits/v1.0.0)
 
 IF YOU ARE SOMEONE USING THIS PLEASE DO ME THE FAVOR OF GIVING ME STARS.
 
