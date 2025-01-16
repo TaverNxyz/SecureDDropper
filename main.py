@@ -56,7 +56,7 @@ def find_images(image_names):
             if location is not None:
                 return True
         except Exception as e:
-            print(Fore.GREEN + f"Loading Into Raid :) ...")
+            print(Fore.GREEN + f"{Fore.RED} Loading Into Raid :) ...")
     return False
 
 def click_at(x, y):
