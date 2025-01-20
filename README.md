@@ -6,9 +6,6 @@ Buy me a ☕ - https://buymeacoffee.com/esco
 
 1-13-2025: Update for Map and Round selection updated. Enjoy :)
 
-### ARCHIVE PASSWORD: EscoSD
-(Case sensitive)
-
 ![unknown_2025 01 13-10 18](https://github.com/user-attachments/assets/25224da6-21cd-4537-93be-de88b7dad3a1)
 
 
