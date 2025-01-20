@@ -33,7 +33,7 @@ IF YOU ARE SOMEONE USING THIS PLEASE DO ME THE FAVOR OF GIVING ME STARS.
 
 
 ### Installation 🛠️
-1.) Download the Latest Release:
-### https://github.com/TaverNxyz/SecureDDropper/releases/tag/v1.1.0
+1.) Download the Latest Release: https://github.com/TaverNxyz/SecureDDropper/releases/tag/v1.1.0
+
 
 2.) Clone and build it with:  git clone [https://github.com/TaverNxyz/SecureDDropper.git]
