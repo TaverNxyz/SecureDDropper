@@ -5,7 +5,7 @@ Buy me a ☕ - https://buymeacoffee.com/esco
 Extract, Dont mess with it, Run
 
 ### SecureDDropper 🚀
-### v1.1.0 Release
+### v1.4.0 Release
 
 1-13-2025: Update for Map and Round selection updated. Enjoy :)
 
