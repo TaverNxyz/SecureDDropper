@@ -5,7 +5,7 @@ Buy me a ☕ - https://buymeacoffee.com/esco
 
 ### Easy Installation - https://github.com/TaverNxyz/SecureDDropper/releases/tag/v1.1.0
 
-Extract, Dont mess with it, Run
+Extract, Dont mess with it, 
 
 ### SecureDDropper 🚀
 ### v1.4.0 Release
