@@ -1,143 +1,97 @@
-import pyautogui
-import time
+import tkinter as tk
+from PIL import Image, ImageTk
+import subprocess
 import os
-from colorama import Fore, Style, init
 
-# Initialize colorama for colored text
-init(autoreset=True)
+ascii_art = r"""
+ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ 
+||e |||m |||p |||e |||r |||i |||u |||m |||. |||t |||e |||c |||h ||
+||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__|||__||
+|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
 
-def get_map_coordinates(map_choice):
-    map_coords = {
-        1: (770, 430),  # CUSTOMS
-        2: (530, 560),  # SHORELINE
-        3: (520, 560),  # STREETS
-        4: (710, 390),  # FACTORY
-        5: (880, 515),  # INTERCHANGE
-        6: (440, 440)   # LIGHTHOUSE
-    }
-    return map_coords.get(map_choice)
+"""
 
-def display_map_menu():
-    print(Fore.CYAN + "\nSelect a map:")
-    print(Fore.WHITE + "1. CUSTOMS")
-    print(Fore.WHITE + "2. SHORELINE")
-    print(Fore.WHITE + "3. STREETS")
-    print(Fore.WHITE + "4. FACTORY")
-    print(Fore.WHITE + "5. INTERCHANGE")
-    print(Fore.WHITE + "6. LIGHTHOUSE")
-    print(Fore.WHITE + "7. Exit")
-    
-    while True:
+class SplashScreen:
+    def __init__(self, root, gif_path, exe_path, duration=1.5):
+        self.root = root
+        self.gif_path = gif_path
+        self.exe_path = exe_path
+        self.duration = int(duration * 1500)  # Convert to milliseconds for after()
+
+        # Configure the window
+        root.overrideredirect(True)  # Remove window border
+
+        # Load the GIF to get its dimensions
+        self.gif = Image.open(gif_path)
+        width, height = self.gif.size
+
+        # Set window size based on GIF dimensions
+        root.geometry(f"{width}x{height}")
+
+        # Center on screen
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x = (screen_width - width) // 2
+        y = (screen_height - height) // 2
+        root.geometry(f"{width}x{height}+{x}+{y}")
+
+        # Set up for animation
+        self.frames = []
+        self.current_frame = 0
+
         try:
-            choice = int(input(Fore.YELLOW + "\nEnter your choice (1-7): "))
-            if 1 <= choice <= 7:
-                return choice
-            else:
-                print(Fore.RED + "Please enter a number between 1-7.")
-        except ValueError:
-            print(Fore.RED + "Please enter a valid number.")
+            # Save all frames of the GIF
+            while True:
+                self.frames.append(ImageTk.PhotoImage(self.gif.copy()))
+                self.gif.seek(self.gif.tell() + 1)
+        except EOFError:
+            pass  # End of frames
 
-def get_run_count():
-    while True:
-        try:
-            count = int(input(Fore.YELLOW + "\nHow many times would you like the script to run? (1-100): "))
-            if 1 <= count <= 100:
-                return count
-            else:
-                print(Fore.RED + "Please enter a number between 1 and 100.")
-        except ValueError:
-            print(Fore.RED + "Please enter a valid number.")
+        # Create label to display the GIF
+        self.label = tk.Label(root)
+        self.label.pack()
 
-def find_images(image_names):
-    for image_name in image_names:
-        image_path = os.path.join("images", image_name)
+        # Start animation
+        self.animate()
+
+        # Close splash & launch app after duration
+        root.after(self.duration, self.close_splash)
+
+    def animate(self):
+        """ Updates the GIF animation frames """
+        if self.frames:
+            self.label.config(image=self.frames[self.current_frame])
+            self.current_frame = (self.current_frame + 1) % len(self.frames)
+            self.root.after(50, self.animate)  # Update every 50ms
+
+    def close_splash(self):
+        """ Close the splash screen and wait for user input """
+        print("Closing splash screen...")
+        self.root.quit()  # Stop Tkinter mainloop but don't destroy the window immediately
+        self.wait_for_user()  # Call the method to wait for user input
+
+    def wait_for_user(self):
+        """ Display ASCII art and wait for user input before launching main.exe """
+        print(ascii_art)
+        input("\nPress any key to continue...")
+
+        print(f"Attempting to launch {self.exe_path}")
         try:
-            location = pyautogui.locateOnScreen(image_path, confidence=0.8)
-            if location is not None:
-                return True
+            subprocess.Popen(self.exe_path, shell=True, cwd=os.path.dirname(self.exe_path))
+            print("Launching main.exe...")
         except Exception as e:
-            print(Fore.GREEN + f"{Fore.RED} Loading Into Raid :) ...")
-    return False
+            print(f"Error launching executable: {e}")
 
-def click_at(x, y):
-    try:
-        pyautogui.click(x, y)
-        time.sleep(0.5)
-        print(Fore.GREEN + f"Clicked at coordinates ({x}, {y}).")
-    except Exception as e:
-        print(Fore.RED + f"Error clicking at coordinates ({x}, {y}): {e}")
-
-def run_script(map_choice, current_run, total_runs):
-    print(Fore.CYAN + f"\nStarting run {current_run} of {total_runs}")
-    print(Fore.YELLOW + "Please ensure that Escape From Tarkov is running.")
-    print(Fore.YELLOW + "You have 5 seconds to prepare before the script starts.")
-    time.sleep(5)
-
-    map_coords = get_map_coordinates(map_choice)
-    if not map_coords:
-        print(Fore.RED + "Invalid map selection!")
-        return False
-
-    # Initial clicks
-    print(Fore.CYAN + "Performing initial clicks...")
-    click_at(954, 643)  # 1st click
-    click_at(958, 946)  # 2nd click
-
-    print(Fore.CYAN + "Waiting for map selection screen...")
-    time.sleep(2)
-
-    # Click the map coordinates
-    print(Fore.CYAN + f"Clicking selected map at coordinates {map_coords}...")
-    click_at(*map_coords)
-    print(Fore.GREEN + "Map selected!")
-    time.sleep(0.5)
-
-    click_at(1251, 1004)  # 4th click
-    time.sleep(0.5)
-
-    # Step 2: Wait for specific images to appear
-    print(Fore.CYAN + "Waiting for specific images to appear...")
-    while not find_images(["ICON IN RAID.png", "HUD ELEMENTS.png", "TOP LEFT PLAYER ICON.png"]):
-        time.sleep(1)
-
-    print(Fore.GREEN + "One of the images found! Continuing with the script...")
-
-    # Spacebar spam until "RAID ENDED.png" is found
-    print(Fore.RED + "Pressing spacebar repeatedly until 'RAID ENDED.png' is found...")
-    while not find_images(["RAID ENDED.png"]):
-        pyautogui.press('space')
-        time.sleep(0.5)
-
-    print(Fore.GREEN + "'RAID ENDED.png' found! Continuing the process.")
-
-    # Final clicks and actions
-    click_at(954, 1034)  # 5th click
-    print(Fore.CYAN + "5th mouse click executed.")
-
-    # Wait for "CLICK Y.png" and press 'y'
-    print(Fore.CYAN + "Waiting for 'CLICK Y.png' to appear...")
-    while not find_images(["CLICK Y.png"]):
-        time.sleep(1)
-
-    print(Fore.GREEN + "'CLICK Y.png' found! Pressing 'y' key.")
-    pyautogui.press('y')
-
-    # Restart process when specific images are found
-    print(Fore.RED + "Process complete. Waiting to restart...")
-    while not find_images(["ATTENTION.png", "CHARACTER.png", "TRADING.png", "HIDEOUT.png", "EFT.png"]):
-        time.sleep(1)
-
-    print(Fore.GREEN + "Restart images found! Restarting the script...")
 
 if __name__ == "__main__":
-    while True:
-        map_choice = display_map_menu()
-        if map_choice == 7:
-            print(Fore.CYAN + "Exiting script. Goodbye!")
-            break
+    # Get the directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
-        run_count = get_run_count()
+    # Build paths to the files
+    gif_path = os.path.join(script_dir, "ezgif.com-optimize.gif")
+    exe_path = os.path.join(script_dir, "jumppad.exe")
 
-        for current_run in range(1, run_count + 1):
-            run_script(map_choice, current_run, run_count)
-        
+    # Create and run splash screen
+    splash = tk.Tk()
+    app = SplashScreen(splash, gif_path, exe_path, duration=1.5)
+    splash.mainloop()
