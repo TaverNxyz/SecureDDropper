@@ -1,8 +1,8 @@
 Buy me a ☕ - https://buymeacoffee.com/esco
 
-THE POST-RAID BLEED PATCH WAS DISABLED, OR I'M JUST A STRAIGHT DIPSHIT WHO COULDNT MANAGE TO KEEP A HEAVY BLEED AFTER EATING A VOG 3 TIMES
+# THE POST-RAID BLEED PATCH WAS DISABLED, OR I'M JUST A STRAIGHT DIPSHIT WHO COULDNT MANAGE TO KEEP A HEAVY BLEED AFTER EATING A VOG 3 TIMES
 
-Either way, repo is updated, really just some visual aspects to it so not necessary for functionality.
+# Either way, repo is updated, really just some visual aspects to it so not necessary for functionality.
 
 Stamina-farm bot is still WIP. entirely too much logic than what i thought i signed up for but momma aint raise no bitch so i am trying 💪
 
